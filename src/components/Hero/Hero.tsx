@@ -1,4 +1,8 @@
+import { useAuth0 } from "@auth0/auth0-react";
+
 function Hero() {
+  const { loginWithRedirect } = useAuth0();
+
   return (
     <section
       style={{
@@ -27,6 +31,7 @@ function Hero() {
               border: "none",
               cursor: "pointer",
             }}
+            onClick={() => loginWithRedirect()}
           >
             Apply as Candidate
           </button>
